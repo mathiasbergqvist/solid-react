@@ -1,5 +1,6 @@
 import "./App.css";
 import logo from "./assets/devux_logo_original.svg";
+import Schema from "./components/schema/Schema";
 
 const App = () => (
   <>
@@ -8,7 +9,8 @@ const App = () => (
         <img src={logo} className="logo" alt="React logo" />
       </a>
     </div>
-    <h1>DevUx Schema Builder</h1>
+    <h1>DevUx Schema Viewer</h1>
+    <Schema />
   </>
 );
 

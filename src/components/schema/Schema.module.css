@@ -1,0 +1,66 @@
+.infoCard {
+  width: 100%;
+  max-width: 500px;
+  border: 2px solid #fdd327;
+  border-radius: 10px;
+  padding: 16px;
+  background-color: #ff0073;
+  box-shadow: 3px 6px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  margin-bottom: 10px;
+}
+
+.infoCard:hover {
+  transform: scale(1.05);
+}
+
+.infoCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.infoCardTitle {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fdd327;
+}
+
+.infoCardDate {
+  font-size: 16px;
+  font-weight: bold;
+  color: #16234d;
+}
+
+.infoCardDescription {
+  font-size: 14px;
+  color: #16234d;
+  margin-bottom: 12px;
+}
+
+.infoCardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.infoCardAuthor {
+  font-size: 12px;
+  color: #16234d;
+}
+
+.infoCardButton {
+  padding: 6px 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  background-color: #16234d;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.infoCardButton:hover {
+  background-color: rgb(0, 19, 39);
+}
