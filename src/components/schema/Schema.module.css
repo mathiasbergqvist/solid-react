@@ -64,3 +64,27 @@
 .infoCardButton:hover {
   background-color: rgb(0, 19, 39);
 }
+
+.buttonGroup {
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+  align-items: center;
+  margin: 20px;
+  color: #fdd327;
+}
+
+.filterButton {
+  padding: 6px 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff0073;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.filterButton:hover {
+  background-color: #83023c;
+}

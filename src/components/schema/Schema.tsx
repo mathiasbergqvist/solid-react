@@ -43,6 +43,27 @@ const Schema = () => {
 
   return (
     <>
+      <div className={styles.buttonGroup}>
+        Välj dag:
+        <button
+          onClick={() => handleFilter(ScheduleDay.unset)}
+          className={styles.filterButton}
+        >
+          Alla dagar
+        </button>
+        <button
+          onClick={() => handleFilter(ScheduleDay.friday)}
+          className={styles.filterButton}
+        >
+          2023-03-21
+        </button>
+        <button
+          onClick={() => handleFilter(ScheduleDay.saturday)}
+          className={styles.filterButton}
+        >
+          2023-03-22
+        </button>
+      </div>
       {filteredSchema.map((talk) => {
         const { title, speaker, date, description } = talk;
         return (
