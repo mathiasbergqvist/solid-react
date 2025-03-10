@@ -1,0 +1,24 @@
+{
+  "talks": [
+    {
+      "id": 1,
+      "title": "<h1 class='heading-I'>Fluid</h1>",
+      "speaker": "Conrad Ljungström"
+    },
+    {
+      "id": 2,
+      "title": "Tillgänglighetslagen",
+      "speaker": "Daniel Jovic"
+    },
+    {
+      "id": 3,
+      "title": "Från Angular Till React På 8 Dagar",
+      "speaker": "Joakim Larsson"
+    },
+    {
+      "id": 4,
+      "title": "Vanilla Extract - Putting Some Flavour To Your CSS",
+      "speaker": "Desireé Björkman"
+    }
+  ]
+}
