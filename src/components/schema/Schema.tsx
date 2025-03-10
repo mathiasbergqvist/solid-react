@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Schema.module.css";
 import { Talk } from "../../models/Talk";
+import { ScheduleDay } from "../../models/ScheduleDay";
 
 const Schema = () => {
   const [schema, setSchema] = useState<Array<Talk>>([]);
+  const [dayFilter, setDayFilter] = useState<ScheduleDay>(ScheduleDay.unset);
 
   const fetchSchema = () => {
     fetch("http://localhost:3232/talks")
@@ -15,6 +17,22 @@ const Schema = () => {
       });
   };
 
+  const handleFilter = (day: ScheduleDay) => {
+    setDayFilter(day);
+  };
+
+  const filteredSchema = schema.filter((talk) => {
+    if (dayFilter === ScheduleDay.unset) {
+      return true;
+    }
+    if (dayFilter === ScheduleDay.friday) {
+      return talk.date.includes("2023-03-21");
+    }
+    if (dayFilter === ScheduleDay.saturday) {
+      return talk.date.includes("2023-03-22");
+    }
+  });
+
   useEffect(() => {
     fetchSchema();
   }, []);
@@ -25,7 +43,7 @@ const Schema = () => {
 
   return (
     <>
-      {schema.map((talk) => {
+      {filteredSchema.map((talk) => {
         const { title, speaker, date, description } = talk;
         return (
           <div className={styles.infoCard}>
