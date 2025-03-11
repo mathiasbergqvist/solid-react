@@ -85,6 +85,10 @@
   transition: background-color 0.2s;
 }
 
+.filterButtonSelected {
+  background-color: #83023c;
+}
+
 .filterButton:hover {
   background-color: #83023c;
 }

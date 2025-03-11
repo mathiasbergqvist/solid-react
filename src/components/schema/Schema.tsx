@@ -47,19 +47,25 @@ const Schema = () => {
         Välj dag:
         <button
           onClick={() => handleFilter(ScheduleDay.unset)}
-          className={styles.filterButton}
+          className={`${styles.filterButton} ${
+            dayFilter === ScheduleDay.unset && styles.filterButtonSelected
+          }`}
         >
           Alla dagar
         </button>
         <button
           onClick={() => handleFilter(ScheduleDay.friday)}
-          className={styles.filterButton}
+          className={`${styles.filterButton} ${
+            dayFilter === ScheduleDay.friday && styles.filterButtonSelected
+          }`}
         >
           2023-03-21
         </button>
         <button
           onClick={() => handleFilter(ScheduleDay.saturday)}
-          className={styles.filterButton}
+          className={`${styles.filterButton} ${
+            dayFilter === ScheduleDay.saturday && styles.filterButtonSelected
+          }`}
         >
           2023-03-22
         </button>
