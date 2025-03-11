@@ -25,7 +25,8 @@
 }
 
 .selected {
-  border: 2px solid #fdd327;
+  background-color: #fdd327;
+  color: #16234d;
 }
 
 .iconContainer {
