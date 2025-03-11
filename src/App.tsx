@@ -1,6 +1,7 @@
 import "./App.css";
 import logo from "./assets/devux_logo_original.svg";
 import Schema from "./components/schema/Schema";
+import Input from "./design-system/Input/Input";
 
 const App = () => (
   <>

@@ -2,8 +2,7 @@ import React from "react";
 import styles from "./Button.module.css";
 import { ButtonIcon, ButtonType } from "./Button.enums";
 
-interface HTMLButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   buttonType: ButtonType;
   text: string;
   icon?: ButtonIcon;
@@ -18,14 +17,15 @@ const Button = ({
   iconLabel,
   selected,
   onClick,
+  className,
   ...restProps
-}: HTMLButtonProps) => {
-  const className = `${styles.button} ${styles[buttonType]} ${
+}: ButtonProps) => {
+  const styling = `${styles.button} ${styles[buttonType]} ${
     selected && styles.selected
-  }`;
+  } ${className}`;
 
   return (
-    <button onClick={onClick} className={className} {...restProps}>
+    <button onClick={onClick} className={styling} {...restProps}>
       {text}
       <div className={styles.iconContainer}>
         {icon === ButtonIcon.hand && (

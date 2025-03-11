@@ -50,21 +50,6 @@
   color: #16234d;
 }
 
-.infoCardButton {
-  padding: 6px 12px;
-  font-size: 14px;
-  border: none;
-  border-radius: 5px;
-  background-color: #16234d;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.infoCardButton:hover {
-  background-color: rgb(0, 19, 39);
-}
-
 .buttonGroup {
   display: flex;
   justify-content: space-between;
@@ -72,23 +57,4 @@
   align-items: center;
   margin: 20px;
   color: #fdd327;
-}
-
-.filterButton {
-  padding: 6px 12px;
-  font-size: 14px;
-  border: none;
-  border-radius: 5px;
-  background-color: #ff0073;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.filterButtonSelected {
-  background-color: #83023c;
-}
-
-.filterButton:hover {
-  background-color: #83023c;
 }

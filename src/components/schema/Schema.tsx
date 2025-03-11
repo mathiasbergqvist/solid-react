@@ -7,10 +7,12 @@ import {
   ButtonIcon,
   ButtonType,
 } from "../../design-system/Button/Button.enums";
+import Input from "../../design-system/Input/Input";
 
 const Schema = () => {
   const [schema, setSchema] = useState<Array<Talk>>([]);
   const [dayFilter, setDayFilter] = useState<ScheduleDay>(ScheduleDay.unset);
+  const [searchTerm, setSearchTerm] = useState<string>("");
 
   const fetchSchema = () => {
     fetch("http://localhost:3232/talks")
@@ -22,11 +24,23 @@ const Schema = () => {
       });
   };
 
-  const handleFilter = (day: ScheduleDay) => {
+  useEffect(() => {
+    fetchSchema();
+  }, []);
+
+  if (schema.length === 0) {
+    return null;
+  }
+
+  const handleSearchFilter = (searchTearm: string) => {
+    setSearchTerm(searchTearm);
+  };
+
+  const handleDayFilter = (day: ScheduleDay) => {
     setDayFilter(day);
   };
 
-  const filteredSchema = schema.filter((talk) => {
+  const filteredSchemaByDay: Array<Talk> = schema.filter((talk) => {
     if (dayFilter === ScheduleDay.unset) {
       return true;
     }
@@ -38,16 +52,19 @@ const Schema = () => {
     }
   });
 
-  useEffect(() => {
-    fetchSchema();
-  }, []);
-
-  if (schema.length === 0) {
-    return null;
-  }
+  const filteredSchemaBySearch: Array<Talk> = filteredSchemaByDay.filter(
+    (talk) => {
+      return talk.title.toLowerCase().includes(searchTerm.toLowerCase());
+    }
+  );
 
   return (
     <>
+      <Input
+        placeholder="Sök efter pass"
+        value={searchTerm}
+        onChange={handleSearchFilter}
+      />
       <div className={styles.buttonGroup}>
         Välj dag:
         <Button
@@ -55,7 +72,7 @@ const Schema = () => {
           buttonType={ButtonType.secondary}
           icon={ButtonIcon.hand}
           iconLabel="Emoji med öppna händer"
-          onClick={() => handleFilter(ScheduleDay.unset)}
+          onClick={() => handleDayFilter(ScheduleDay.unset)}
           selected={dayFilter === ScheduleDay.unset}
         />
         <Button
@@ -63,7 +80,7 @@ const Schema = () => {
           buttonType={ButtonType.secondary}
           icon={ButtonIcon.one_finger}
           iconLabel="Emoji med en hand som sträcker upp ett finger"
-          onClick={() => handleFilter(ScheduleDay.friday)}
+          onClick={() => handleDayFilter(ScheduleDay.friday)}
           selected={dayFilter === ScheduleDay.friday}
         />
         <Button
@@ -71,11 +88,11 @@ const Schema = () => {
           buttonType={ButtonType.secondary}
           icon={ButtonIcon.two_fingers}
           iconLabel="Emoji med en hand som sträcker upp två fingrar"
-          onClick={() => handleFilter(ScheduleDay.saturday)}
+          onClick={() => handleDayFilter(ScheduleDay.saturday)}
           selected={dayFilter === ScheduleDay.saturday}
         />
       </div>
-      {filteredSchema.map((talk) => {
+      {filteredSchemaBySearch.map((talk) => {
         const { title, speaker, date, description } = talk;
         return (
           <div className={styles.infoCard}>
