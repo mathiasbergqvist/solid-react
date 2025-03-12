@@ -63,5 +63,32 @@
       "description": "Vi lajvkodar en Elixir-backend som serverar ett hiskeligt antal rutor till hiskeligt många klienter. Inspirerat av https://onemillioncheckboxes.com/",
       "date": "2023-03-22"
     }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "talkId": 2,
+      "comment": "Bra pass!"
+    },
+    {
+      "id": 2,
+      "talkId": 2,
+      "comment": "I can't break the law. I am the law."
+    },
+    {
+      "id": 3,
+      "talkId": 6,
+      "comment": "Jag fann bara ett fel. Det här passet."
+    },
+    {
+      "id": 4,
+      "talkId": 5,
+      "comment": "Jag är mörkrädd."
+    },
+    {
+      "id": "ca70",
+      "talkId": 1,
+      "comment": "...med h2 då?"
+    }
   ]
 }

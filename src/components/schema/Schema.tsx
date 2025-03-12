@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styles from "./Schema.module.css";
 import { Talk } from "../../models/Talk";
 import { ScheduleDay } from "../../models/ScheduleDay";
@@ -8,29 +8,17 @@ import {
   ButtonType,
 } from "../../design-system/Button/Button.enums";
 import Input from "../../design-system/Input/Input";
+import SpeechBubble from "../SpeechBubble/SpeechBubble";
+import Comments from "../Comments/Comments";
 
-const Schema = () => {
-  const [schema, setSchema] = useState<Array<Talk>>([]);
+type SchemaProps = {
+  talks: Array<Talk>;
+};
+
+const Schema = ({ talks }: SchemaProps) => {
   const [dayFilter, setDayFilter] = useState<ScheduleDay>(ScheduleDay.unset);
   const [searchTerm, setSearchTerm] = useState<string>("");
-
-  const fetchSchema = () => {
-    fetch("http://localhost:3232/talks")
-      .then((res) => res.json())
-      .then((data) => {
-        if (data) {
-          setSchema(data);
-        }
-      });
-  };
-
-  useEffect(() => {
-    fetchSchema();
-  }, []);
-
-  if (schema.length === 0) {
-    return null;
-  }
+  const [displayComments, setDisplayComments] = useState<Array<number>>([]);
 
   const handleSearchFilter = (searchTearm: string) => {
     setSearchTerm(searchTearm);
@@ -40,7 +28,15 @@ const Schema = () => {
     setDayFilter(day);
   };
 
-  const filteredSchemaByDay: Array<Talk> = schema.filter((talk) => {
+  const handleShowComments = (id: number) => {
+    setDisplayComments((prevState) => [...prevState, id]);
+  };
+
+  const shouldDisplayComments = (id: number) => {
+    return displayComments.includes(id);
+  };
+
+  const filteredSchemaByDay: Array<Talk> = talks.filter((talk) => {
     if (dayFilter === ScheduleDay.unset) {
       return true;
     }
@@ -93,23 +89,25 @@ const Schema = () => {
         />
       </div>
       {filteredSchemaBySearch.map((talk) => {
-        const { title, speaker, date, description } = talk;
+        const { title, speaker, date } = talk;
         return (
           <div className={styles.infoCard}>
             <div className={styles.infoCardHeader}>
               <h3 className={styles.infoCardTitle}>{title}</h3>
               <span className={styles.infoCardDate}>{date}</span>
             </div>
-            <p className={styles.infoCardDescription}>{description}</p>
+            <SpeechBubble talk={talk} />
             <div className={styles.infoCardFooter}>
               <span className={styles.infoCardAuthor}>Av {speaker}</span>
               <Button
-                text="Läs Mer"
+                text="Visa Kommentarer"
                 buttonType={ButtonType.primary}
                 icon={ButtonIcon.arrow}
                 iconLabel="Emoji med en pil"
+                onClick={(_) => handleShowComments(talk.id)}
               />
             </div>
+            {shouldDisplayComments(talk.id) && <Comments talkId={talk.id} />}
           </div>
         );
       })}
