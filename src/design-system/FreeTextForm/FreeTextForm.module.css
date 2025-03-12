@@ -1,0 +1,41 @@
+.commentsForm {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: #16234d;
+  border: 1px solid #fdd327;
+  color: #fdd327;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.textarea {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.submitButton {
+  padding: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.submitButton:hover {
+  background-color: #0056b3;
+}
