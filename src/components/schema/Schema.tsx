@@ -22,7 +22,7 @@ const Schema = ({ sessions }: SchemaProps) => {
       <Input
         placeholder="Sök efter pass"
         value={searchTerm}
-        onChange={handleSearchFilter}
+        handleInputChange={handleSearchFilter}
       />
       <DateFilter handleDayFilter={handleDayFilter} currentFilter={dayFilter} />
       {filteredSessions.map((session: SessionModel) => (

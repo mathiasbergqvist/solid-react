@@ -1,19 +1,16 @@
 import React from "react";
 import styles from "./Input.module.css";
 
-type Props = {
-  placeholder: string;
-  value: string;
-  onChange: (value: string) => void;
-};
+interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  handleInputChange: (value: string) => void;
+}
 
-const Input = ({ value, onChange, placeholder }: Props) => (
+const Input = ({ handleInputChange, className, ...restProps }: InputProps) => (
   <div className={styles.inputContainer}>
     <input
-      className={styles.input}
-      value={value}
-      onChange={(e) => onChange(e.target.value)}
-      placeholder={placeholder}
+      className={`${styles.input} ${className}`}
+      onChange={(e) => handleInputChange(e.target.value)}
+      {...restProps}
     />
   </div>
 );

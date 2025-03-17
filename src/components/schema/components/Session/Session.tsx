@@ -1,15 +1,12 @@
 import React from "react";
-import SpeechBubble from "../../../SpeechBubble/SpeechBubble";
 import Button from "../../../../design-system/Button/Button";
-import styles from "./Session.module.css";
-import Comments from "../../../Comments/Comments";
-import {
-  ButtonIcon,
-  ButtonType,
-} from "../../../../design-system/Button/Button.enums";
-import { Session as SessionModel } from "../../../../models/Session";
+import { ButtonType } from "../../../../design-system/Button/Button.enums";
 import Icon from "../../../../design-system/Icon/Icon";
 import { IconType } from "../../../../design-system/Icon/Icon.enums";
+import { Session as SessionModel } from "../../../../models/Session";
+import Comments from "../../../Comments/Comments";
+import SpeechBubble from "../../../SpeechBubble/SpeechBubble";
+import styles from "./Session.module.css";
 
 type SessionProps = {
   session: SessionModel;
