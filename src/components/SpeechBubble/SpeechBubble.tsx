@@ -1,15 +1,13 @@
-import React from "react";
 import styles from "./SpeechBubble.module.css";
-import { Talk } from "../../models/Talk";
 
 type Props = {
-  talk: Talk;
+  text: string;
 };
 
-const SpeechBubble = ({ talk }: Props) => (
+const SpeechBubble = ({ text }: Props) => (
   <div className={styles.bubbleContainer}>
     <div className={styles.bubble}>
-      <p className={styles.text}>{talk.description}</p>
+      <p className={styles.text}>{text}</p>
       <div className={styles.tail}></div>
     </div>
   </div>
