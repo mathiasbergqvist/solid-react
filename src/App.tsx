@@ -1,30 +1,10 @@
-import { useEffect, useState } from "react";
 import "./App.css";
 import logo from "./assets/devux_logo_original.svg";
 import Schema from "./components/Schema/Schema";
-import { Session } from "./models/Session";
+import useSessions from "./hooks/useSessions";
 
 const App = () => {
-  const [talks, setTalks] = useState<Array<Session>>([]);
-
-  const fetchSchema = async () => {
-    try {
-      await fetch("http://localhost:3232/talks")
-        .then((res) => res.json())
-        .then((data: Array<Session>) => {
-          if (data) {
-            setTalks(data);
-          }
-        });
-    } catch (_) {
-      console.error("Failed to fetch talks");
-    }
-  };
-
-  useEffect(() => {
-    fetchSchema();
-  }, []);
-
+  const { sessions } = useSessions();
   return (
     <>
       <div>
@@ -33,7 +13,7 @@ const App = () => {
         </a>
       </div>
       <h1>DevUx Schedule Viewer</h1>
-      {talks.length > 0 && <Schema sessions={talks} />}
+      {sessions.length > 0 && <Schema sessions={sessions} />}
     </>
   );
 };
