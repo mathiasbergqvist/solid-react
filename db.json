@@ -1,63 +1,63 @@
 {
-  "talks": [
+  "sessions": [
     {
-      "id": 1,
+      "id": "1",
       "title": "<h1 class='heading-I'>Fluid</h1>",
       "speaker": "Conrad Ljungström",
       "description": "Vad innebär det att ha en flytande typografi, hur funkar det och är det ens bra? Vi kikar lite närmre!",
       "date": "2023-03-21"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Tillgänglighetslagen",
       "speaker": "Daniel Jovic",
       "description": "Den 28 juni börjar tillgänglighetsdirektivet gälla, och det innebär nya krav för retailbolag, banker och offentlig sektor. Vad innebär det här för våra kunder och hur kan vi hjälpa dem att uppfylla kraven?",
       "date": "2023-03-21"
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Från Angular Till React På 8 Dagar",
       "speaker": "Joakim Larsson",
       "description": "I våras bytte jag från att ha skrivit Angular i flera år till React och Next. Hur blev det så? Hur svårt är det att byta? Hur svårt är serverside rendering när det närmsta man sett är php? Och vilket är egentligen bäst av Angular och React? Lite av en gnilp av TF men mest en uppmaning att våga hoppa mellan ramverk till alla.",
       "date": "2023-03-21"
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "Vanilla Extract - Putting Some Flavour To Your CSS",
       "speaker": "Desireé Björkman",
       "description": "*Från AI: CSS är en av de mest använda och populära språket på webben. Det är också en av de mest komplicerade. Vi ska göra en liten förhandling och lägga till en liten bit av flavor till vår CSS-kod. Detta är en kul förhandling som kan hjälpa oss att skapa en mer modern och snabbare kod.",
       "date": "2023-03-21"
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "Code In The Dark",
       "speaker": "Maryam Alizadeh & Arvid Backhagen",
       "description": "Light's Out!",
       "date": "2023-03-21"
     },
     {
-      "id": 6,
+      "id": "6",
       "title": "Finn Fem Fel - Och Vinn En SOLID Webapp",
       "speaker": "Mathias Bergqvist",
       "description": "Passet saknar beskrivning eftersom passhållarens hund åt upp passbeskrivningen. Opassande nog.",
       "date": "2023-03-22"
     },
     {
-      "id": 7,
+      "id": "7",
       "title": "Figma-workshop",
       "speaker": "Daniel Jovic",
       "description": "*Från AI: Vad är Figma och vad kan jag göra med den? Hur fungerar Figma? Vad är Figma-komponenter och hur kan jag använda dem? Vad är Figma-designsystemet och hur kan jag använda det? Hur kan jag skapa Figma-komponenter?",
       "date": "2023-03-22"
     },
     {
-      "id": 8,
+      "id": "8",
       "title": "DevEx på DevUx",
       "speaker": "Stella Biliou",
       "description": "Diskussionpass om DevEx på DevUx!",
       "date": "2023-03-22"
     },
     {
-      "id": 9,
+      "id": "9",
       "title": "Drick En Elixir-Dricka Och Börja Klicka (I En Miljon Rutor)",
       "speaker": "Adrian Lökk & Jonas Ransjö",
       "description": "Vi lajvkodar en Elixir-backend som serverar ett hiskeligt antal rutor till hiskeligt många klienter. Inspirerat av https://onemillioncheckboxes.com/",
@@ -66,29 +66,34 @@
   ],
   "comments": [
     {
-      "id": 1,
-      "talkId": 2,
+      "id": "1",
+      "sessionId": 2,
       "comment": "Bra pass!"
     },
     {
-      "id": 2,
-      "talkId": 2,
+      "id": "2",
+      "sessionId": 2,
       "comment": "I can't break the law. I am the law."
     },
     {
-      "id": 3,
-      "talkId": 6,
+      "id": "3",
+      "sessionId": 6,
       "comment": "Jag fann bara ett fel. Det här passet."
     },
     {
-      "id": 4,
-      "talkId": 5,
+      "id": "4",
+      "sessionId": 5,
       "comment": "Jag är mörkrädd."
     },
     {
       "id": "ca70",
-      "talkId": 1,
+      "sessionId": 1,
       "comment": "...med h2 då?"
+    },
+    {
+      "id": "e717",
+      "sessionId": "3",
+      "comment": "Jag lärde mig React på 7 dagar."
     }
   ]
 }
