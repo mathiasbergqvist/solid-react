@@ -1,4 +1,4 @@
-export interface Talk {
+export interface Session {
   id: number;
   title: string;
   speaker: string;
