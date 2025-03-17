@@ -8,6 +8,8 @@ import {
   ButtonType,
 } from "../../../../design-system/Button/Button.enums";
 import { Session as SessionModel } from "../../../../models/Session";
+import Icon from "../../../../design-system/Icon/Icon";
+import { IconType } from "../../../../design-system/Icon/Icon.enums";
 
 type SessionProps = {
   session: SessionModel;
@@ -28,9 +30,8 @@ const Session = ({ session }: SessionProps) => {
         <Button
           text="Visa Kommentarer"
           buttonType={ButtonType.primary}
-          icon={ButtonIcon.arrow}
-          iconLabel="Emoji med en pil"
           onClick={(_) => setDisplayComments(!displayComments)}
+          icon={<Icon icon={IconType.arrow} iconLabel="Emoji med en pil" />}
         />
       </div>
       {displayComments && <Comments talkId={id} />}
