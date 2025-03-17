@@ -31,7 +31,7 @@ const Session = ({ session }: SessionProps) => {
           icon={<Icon icon={IconType.arrow} iconLabel="Emoji med en pil" />}
         />
       </div>
-      {displayComments && <Comments talkId={id} />}
+      {displayComments && <Comments sessionId={id} />}
     </div>
   );
 };

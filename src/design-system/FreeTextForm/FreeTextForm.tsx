@@ -4,32 +4,17 @@ import Button from "../Button/Button";
 import { ButtonType } from "../Button/Button.enums";
 
 type FreeTextFormProps = {
-  talkId: number;
-  onCommentAdded: () => void;
+  onSubmit: (comment: string) => void;
 };
 
-const FreeTextForm = ({ talkId, onCommentAdded }: FreeTextFormProps) => {
+const FreeTextForm = ({ onSubmit }: FreeTextFormProps) => {
   const [comment, setComment] = useState<string>("");
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (comment.trim()) {
-      try {
-        await fetch("http://localhost:3232/comments", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            talkId,
-            comment,
-          }),
-        });
-        setComment("");
-        onCommentAdded();
-      } catch (_) {
-        console.error("Failed to submit comment:");
-      }
+      onSubmit(comment);
+      setComment("");
     }
   };
 
